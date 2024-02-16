@@ -48,6 +48,7 @@ namespace HandBrakeWPF
         public const string Source = "{source}";
         public const string SourcePath = "{source_path}";
         public const string SourceFolderName = "{source_folder_name}";
+        public const string SourceToRoot = "{source_to_root}";
 
         public const string FileScanMru = "FileScanMru";
         public const string FileSaveMru = "FileSaveMru";

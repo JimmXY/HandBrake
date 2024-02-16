@@ -232,7 +232,7 @@ namespace HandBrakeWPF.ViewModels
 
         public IPresetManagerViewModel PresetManagerViewModel { get; set; }
 
-        public int SelectedTab { get; set; }
+        public int SelectedTab { get; set; }        
 
         /* Commands */
         public ICommand AddToQueueQualitySweepCommand => new AddToQueueQualitySweepCommand(this, this.VideoViewModel, this.userSettingService, this.errorService);
@@ -1224,10 +1224,11 @@ namespace HandBrakeWPF.ViewModels
             {
                 if (this.userSettingService.GetUserSetting<bool>(UserSettingConstants.RecursiveFolderScan))
                 {
+                    this.CurrentTask.SourceRootSelected = dialog.SelectedPath;
                     this.StartScan(FileHelper.FileList(dialog.SelectedPath, true, this.userSettingService.GetUserSetting<List<string>>(UserSettingConstants.ExcludedExtensions)), this.TitleSpecificScan);
                 }
                 else
-                {
+                {                    
                     this.StartScan(new List<string> { dialog.SelectedPath }, this.TitleSpecificScan);
                 }
             }

@@ -31,7 +31,7 @@ namespace HandBrakeWPF.Services.Encode.Model
     using VideoProfile = Models.Video.VideoProfile;
     using VideoTune = Models.Video.VideoTune;
 
-    public class EncodeTask 
+    public class EncodeTask
     {
         public EncodeTask()
         {
@@ -62,7 +62,7 @@ namespace HandBrakeWPF.Services.Encode.Model
             {
                 this.AudioPassthruOptions.Add(allowed);
             }
-            
+
             this.AudioTracks = new ObservableCollection<AudioTrack>();
             foreach (AudioTrack track in task.AudioTracks)
             {
@@ -182,7 +182,7 @@ namespace HandBrakeWPF.Services.Encode.Model
         public bool IPod5GSupport { get; set; }
 
         public bool AlignAVStart { get; set; }
-        
+
         /* Picture Settings */
 
         public int? Width { get; set; }
@@ -204,7 +204,7 @@ namespace HandBrakeWPF.Services.Encode.Model
         public int PixelAspectX { get; set; }
 
         public int PixelAspectY { get; set; }
-        
+
         public bool AllowUpscaling { get; set; }
 
         public bool OptimalSize { get; set; }
@@ -306,7 +306,7 @@ namespace HandBrakeWPF.Services.Encode.Model
         /* Subtitles */
 
         public ObservableCollection<SubtitleTrack> SubtitleTracks { get; set; }
-        
+
         /* Chapters */
 
         public bool IncludeChapterMarkers { get; set; }
@@ -317,7 +317,7 @@ namespace HandBrakeWPF.Services.Encode.Model
 
 
         /* Metadata */
-        
+
         public MetaData MetaData { get; set; }
 
         /* Previews */
@@ -327,5 +327,7 @@ namespace HandBrakeWPF.Services.Encode.Model
         public int? PreviewEncodeDuration { get; set; }
 
         public int? PreviewEncodeStartAt { get; set; }
+
+        public string SourceRootSelected { get; set; }
     }
 }
