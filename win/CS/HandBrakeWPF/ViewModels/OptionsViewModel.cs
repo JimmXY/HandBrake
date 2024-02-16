@@ -602,7 +602,8 @@ namespace HandBrakeWPF.ViewModels
                            new PlaceHolderBucket { Name = Constants.SourcePath },
                            new PlaceHolderBucket { Name = Constants.SourceFolderName },
                            new PlaceHolderBucket { Name = Constants.Source },
-                           new PlaceHolderBucket {Name = Constants.SourceToRoot }
+                           new PlaceHolderBucket {Name = Constants.SourceToRoot },
+                           new PlaceHolderBucket { Name = Constants.RootDirectoryName }
                        };
             }
         }

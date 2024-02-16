@@ -266,6 +266,15 @@ namespace HandBrakeWPF.Helpers
                 }
             }
 
+            // Handle {root_directory_name}
+            if (autoNamePath.Contains(Constants.RootDirectoryName) && !string.IsNullOrEmpty(task.SourceRootSelected))
+            {
+                string[] filesArray = task.SourceRootSelected.Split(Path.AltDirectorySeparatorChar, Path.DirectorySeparatorChar);
+                string sourceFolderRoot = filesArray[filesArray.Length - 1];
+
+                autoNamePath = autoNamePath.Replace(Constants.RootDirectoryName, sourceFolderRoot);
+            }
+
             // Fallback to the users "Videos" folder.
             if (string.IsNullOrEmpty(autoNamePath) || autoNamePath == Resources.OptionsView_SetDefaultLocationOutputFIle)
             {

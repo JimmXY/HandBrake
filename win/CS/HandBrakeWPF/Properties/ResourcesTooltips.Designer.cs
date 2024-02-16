@@ -543,6 +543,7 @@ namespace HandBrakeWPF.Properties {
         ///{source_folder_name} – The name of the directory that the source file is in, without the full path.
         ///{source} - The name of the source file.
         ///{source_to_root} - All folders from the location of the file up to the selected root folder when using recursive folder batch scan.
+        ///{root_directory_name} - The name of the directory of the selected root folder when u [rest of string was truncated]&quot;;.
         /// </summary>
         public static string OptionsView_DestinationReplacementOptions {
             get {
