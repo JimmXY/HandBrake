@@ -96,7 +96,7 @@ namespace HandBrakeWPF.ViewModels
         private bool playSoundWhenDone;
         private bool playSoundWhenQueueDone;
         private bool enableQuickSyncEncoding;
-        private bool enableVceEncoder;    
+        private bool enableVceEncoder;
         private bool enableNvencEncoder;
         private InterfaceLanguage selectedLanguage;
         private bool showAddSelectionToQueue;
@@ -180,7 +180,7 @@ namespace HandBrakeWPF.ViewModels
 
         public BindingList<RightToLeftMode> RightToLeftModes { get; } = new BindingList<RightToLeftMode>(EnumHelper<RightToLeftMode>.GetEnumList().ToList());
 
-        public RightToLeftMode SelectedRightToLeftMode { get;set; }
+        public RightToLeftMode SelectedRightToLeftMode { get; set; }
 
         public bool CheckForUpdates
         {
@@ -601,7 +601,8 @@ namespace HandBrakeWPF.ViewModels
                        {
                            new PlaceHolderBucket { Name = Constants.SourcePath },
                            new PlaceHolderBucket { Name = Constants.SourceFolderName },
-                           new PlaceHolderBucket { Name = Constants.Source }
+                           new PlaceHolderBucket { Name = Constants.Source },
+                           new PlaceHolderBucket {Name = Constants.SourceToRoot }
                        };
             }
         }
@@ -619,7 +620,7 @@ namespace HandBrakeWPF.ViewModels
                        };
             }
         }
-        
+
         public bool UseIsoDateFormat
         {
             get => this.useIsoDateFormat;
@@ -1140,7 +1141,7 @@ namespace HandBrakeWPF.ViewModels
                         MessageBoxImage.Error);
                     return; // Allow only valid ports, not in the ephemeral range
                 }
-                
+
                 this.remoteServicePort = value;
                 this.NotifyOfPropertyChange(() => this.RemoteServicePort);
             }
@@ -1174,7 +1175,7 @@ namespace HandBrakeWPF.ViewModels
         }
 
         public bool IsSimultaneousEncodesSupported => SystemInfo.MaximumSimultaneousInstancesSupported > 1;
-        
+
         #region Public Methods
 
         public void Close()
@@ -1739,14 +1740,14 @@ namespace HandBrakeWPF.ViewModels
                     // Elevation required to run the installer.
                     Process installer = new Process();
                     installer = new Process
-                                {
-                                    StartInfo =
+                    {
+                        StartInfo =
                                     {
                                         FileName = Path.Combine(Path.GetTempPath(), "handbrake-setup.exe"),
                                         UseShellExecute = true,
                                         Verb = "runas"
                                     }
-                                };
+                    };
 
                     installer.Start();
                     ThreadHelper.OnUIThread(() => Application.Current.Shutdown());
@@ -1808,7 +1809,7 @@ namespace HandBrakeWPF.ViewModels
                     return false;
                 }
             }
-            
+
             return true;
         }
     }

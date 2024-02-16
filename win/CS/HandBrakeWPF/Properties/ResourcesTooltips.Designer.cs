@@ -428,7 +428,7 @@ namespace HandBrakeWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Optimize for progressive download. After encoding, data is reorganized and rewritten to allow immediate playback over a network, without needing to download the entire file..
+        ///   Looks up a localized string similar to Optimize MP4 for progressive download. After encoding, data is reorganized and rewritten to allow immediate playback over a network, without needing to download the entire file..
         /// </summary>
         public static string MainView_Optimise {
             get {
@@ -541,7 +541,8 @@ namespace HandBrakeWPF.Properties {
         ///
         ///{source_path} - In the same folder as the source path (if possible)
         ///{source_folder_name} – The name of the directory that the source file is in, without the full path.
-        ///{source} - The name of the source file..
+        ///{source} - The name of the source file.
+        ///{source_to_root} - All folders from the location of the file up to the selected root folder when using recursive folder batch scan.
         /// </summary>
         public static string OptionsView_DestinationReplacementOptions {
             get {

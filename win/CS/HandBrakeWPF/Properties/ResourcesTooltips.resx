@@ -552,7 +552,8 @@ Bitrate will vary source to source.</value>
 
 {source_path} - In the same folder as the source path (if possible)
 {source_folder_name} – The name of the directory that the source file is in, without the full path.
-{source} - The name of the source file.</value>
+{source} - The name of the source file.
+{source_to_root} - All folders from the location of the file up to the selected root folder when using recursive folder batch scan</value>
   </data>
   <data name="OptionsView_LaunchsHelp" xml:space="preserve">
     <value>Launches the documentation website located at https://handbrake.fr/docs</value>
